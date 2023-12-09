@@ -3,9 +3,7 @@
     display:block;
     margin-top:40px;
 }
-.menu{
-    border:solid;
-}
+
 .container1{
     display:flex;
     justify-content: space-between;
@@ -53,6 +51,33 @@
     min-width:100px;
     min-height:40px;
 }
+
+.cart-item{
+    background-color: yellow;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-width:50px;
+    min-height:40px;
+    border:solid;
+    border-radius:40px;
+    margin-left: 10px;
+}
+.cart-item:hover{
+    cursor: pointer;
+}
+
+.my-cart{
+    border:solid;
+    display:flex;
+    max-width:320px;
+    padding: 10px 30px;
+}
+
+.menu{
+    font-size: 39px;
+}
+
 .buy :hover{
     cursor: pointer;
 }
@@ -60,4 +85,17 @@
     text-align: center;
     display: block;
     font-size:40px;
+}
+.my-cart-container{
+    border:solid;
+    display: block;
+}
+.my-list{
+    border:solid;
+    padding: 10px 30px;
+    border-color:purple;
+    max-width: 320px;
+}
+.my-list a{
+    display:block;
 }
