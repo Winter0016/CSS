@@ -1,8 +1,6 @@
 let Item;
 let Price;
 let Item_name;
-let Item_count = 0;
-let Item_number = 0;
 
 // Define the setCookie function
 function setCookie(something, value, daysToLive) {
@@ -28,7 +26,7 @@ function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
 }
 
-deleteAllCookies(); //delete all cookies by default;
+//deleteAllCookies(); //delete all cookies by default;
 
 console.log(document.cookie); // check current cookie
 // Attach click event listeners to buy buttons
@@ -48,8 +46,9 @@ document.querySelectorAll('.buy').forEach(function(anchor) {
 
         // Set cookies
         setCookie(`Price_${Item_name}`, Price, 365);
+
+        let Item_number = parseInt(getCookie(`Item_number`)) || 0;
         setCookie('Item_number', Item_number + 1, 365);
-        Item_number += 1;
 
         // Log the updated values
        // console.log('Item:', Item);
@@ -62,6 +61,7 @@ document.querySelectorAll('.buy').forEach(function(anchor) {
     });
 });
 
+
 function getCookie(name) {
     console.log(`cookies before split: `,document.cookie);
     const cookies = document.cookie.split(';');
@@ -71,7 +71,8 @@ function getCookie(name) {
         const cookie = cookies[i].trim();
         console.log(`cookies${i} : ${cookie}`);
         if (cookie.startsWith(name + '=')) {
-            console.log(`name ${name.length}`);
+            console.log(`name ${name}`);
+            console.log(`name length ${name.length}`);
             console.log(`return cooki.substring: ${cookie.substring(name.length + 1)}`);
             return cookie.substring(name.length + 1);
         }
