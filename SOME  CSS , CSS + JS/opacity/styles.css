@@ -1,0 +1,12 @@
+.box{
+    border:solid;
+    display: block;
+    width: 100px;
+    opacity: 1;
+    transition: opacity 1s ease 0s;
+    height:100px;
+    background: red;
+}
+.box:hover{
+    opacity: 0.6;
+}

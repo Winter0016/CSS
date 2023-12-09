@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.rotate-example {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-family: Arial, sans-serif;
+
+    /* Apply a rotation of 45 degrees */
+    transform: rotatez(45deg);
+    transition: transform 0.5s ease; /* Added transition for smooth animation */
+}
+
+/* Hover effect to demonstrate the transform */
+.rotate-example:hover {
+    transform: rotate(0deg);
+}

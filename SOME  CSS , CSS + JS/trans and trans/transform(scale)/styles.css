@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.scale-example {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease; /* Added transition for a smooth effect */
+
+    /* Initial transformation */
+    transform: scale(1);
+}
+
+/* Hover effect */
+.scale-example:hover {
+    transform: scale(1.5); /* Adjusted value for scaling */
+}

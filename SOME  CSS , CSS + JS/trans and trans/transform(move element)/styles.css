@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.translate-example {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-family: Arial, sans-serif;
+    transition: transform 0.3s ease; /* Added transition for a smooth effect */
+
+    /* Initial transformation */
+    transform: translate(0, 0);
+}
+
+/* Hover effect */
+.translate-example:hover {
+    transform: translate(50px, 50px); /* Adjusted values for better visibility */
+}
