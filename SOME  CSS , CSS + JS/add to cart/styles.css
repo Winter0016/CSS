@@ -97,7 +97,18 @@
     border-color:purple;
     max-width: 320px;
     display:none;
+    position: relative;
 }
 .my-list a{
     display:block;
+}
+
+.delete-cart-item{
+    display:none;
+    position: absolute;
+    top :0;
+    right: 0;
+}
+.delete-cart-item:hover{
+    cursor: pointer;
 }
