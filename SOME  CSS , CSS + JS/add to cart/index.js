@@ -32,7 +32,7 @@ function add_total_to_list() {
             // Extract the substring between parentheses and convert it to a number
             let child_target = parseInt(temp_child.substring(indexOfOpenParen, indexOfCloseParen).trim());
 
-            console.log(`CHILDDDD_TARGETTTT: ${child_target}`);
+            //console.log(`CHILDDDD_TARGETTTT: ${child_target}`);
             total += child_target; // Add the extracted value to the total
         }
     }
@@ -42,7 +42,7 @@ function add_total_to_list() {
         Total_price.textContent=`Total: ${total}`;
         cart_list.append(Total_price);
         check_first_time = false;
-        console.log(`check first time : ${check_first_time}`);
+        //console.log(`check first time : ${check_first_time}`);
         cart_delete_button.style.display ="block";
     }
     else if(check_first_time == false){
@@ -54,19 +54,19 @@ function add_total_to_list() {
 
     }
 
-    console.log(`Total: ${total}`);
+    //console.log(`Total: ${total}`);
 }
 
 function add_item_to_list_function() {
     let target = getCookieItemName();
     for (let i = 0; i < target.length; i++) {
         //console.log("first for");
-        console.log(`target!! : ${target}`);
+        //console.log(`target!! : ${target}`);
         let indexOfB = target[i].indexOf("=");
         let real_target = target[i].substring(0, indexOfB);
         let real_target_number = getCookie(`Count_${real_target}`);
         let real_target_price = parseInt(getCookie(`Price_${real_target}`));
-        console.log(`real target: ${real_target}`);
+        //console.log(`real target: ${real_target}`);
         let classFound = false;
         for (let y = 0; y < cart_list.children.length; y++) {
             //console.log("Enter second for");
@@ -82,7 +82,7 @@ function add_item_to_list_function() {
             let List = document.createElement("li");
             List.classList.add(`${real_target}`);
             List.textContent = `${real_target} : ${real_target_number} (${real_target_price * real_target_number})`;
-            console.log("children.length = 0 or class not found");
+            //console.log("children.length = 0 or class not found");
             cart_list.prepend(List);
         }
     }
@@ -97,7 +97,7 @@ window.onload = function () {
 
 
 
-console.log(document.cookie); // check current cookie
+//console.log(document.cookie); // check current cookie
 // Attach click event listeners to buy buttons
 document.querySelectorAll('.buy').forEach(function(anchor) {
     anchor.addEventListener('click', function() {
@@ -133,17 +133,17 @@ document.querySelectorAll('.buy').forEach(function(anchor) {
 
 
 function getCookie(name) {
-    console.log(`cookies before split: `,document.cookie);
+    //console.log(`cookies before split: `,document.cookie);
     const cookies = document.cookie.split(';');
-    console.log(`cookies after split: ${cookies}`);
-    console.log(`cookies length: ${cookies.length}`);
+    //console.log(`cookies after split: ${cookies}`);
+    //console.log(`cookies length: ${cookies.length}`);
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
-        console.log(`cookies${i} : ${cookie}`);
+        //console.log(`cookies${i} : ${cookie}`);
         if (cookie.startsWith(name + '=')) {
-            console.log(`name ${name}`);
-            console.log(`name length ${name.length}`);
-            console.log(`return cooki.substring: ${cookie.substring(name.length + 1)}`);
+            //console.log(`name ${name}`);
+            //console.log(`name length ${name.length}`);
+            //console.log(`return cooki.substring: ${cookie.substring(name.length + 1)}`);
             return cookie.substring(name.length + 1);
         }
     }
@@ -160,7 +160,7 @@ function getCookieItemName() {
         const cookie = cookies[i].trim();
         //console.log(`cookies${i} : ${cookie}`);
         if (cookie.startsWith("Count_")) {
-            console.log(`cookie: ${cookie}`);
+            //console.log(`cookie: ${cookie}`);
             temp.push(cookie.substring(6));
         }
     }
@@ -178,13 +178,20 @@ let cart_button = document.querySelector('.cart-item');
 let close = true;
 
 cart_button.addEventListener('click',function(){
+    console.log(`cart_list : ${cart_list.children.length}`);
     if(cart_list.style.display=="none"|| close==true){
         cart_list.style.display="block";
-        cart_delete_button.style.display ="none";
         close = false;
     }
     else{
         cart_list.style.display="none";
+    }
+    if(cart_list.children.length == 1){
+        console.log(`cart_list is none`);
+        cart_delete_button.style.display =  "none";
+    }
+    else if(cart_list.children.length != 1){
+        cart_delete_button.style.display = "block";
     }
 
 });
