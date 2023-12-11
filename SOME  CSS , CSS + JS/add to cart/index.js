@@ -54,7 +54,7 @@ function add_total_to_list() {
 
     }
 
-    //console.log(`Total: ${total}`);
+    console.log(`Total: ${total}`);
 }
 
 function add_item_to_list_function() {
@@ -97,7 +97,7 @@ window.onload = function () {
 
 
 
-//console.log(document.cookie); // check current cookie
+console.log(document.cookie); // check current cookie
 // Attach click event listeners to buy buttons
 document.querySelectorAll('.buy').forEach(function(anchor) {
     anchor.addEventListener('click', function() {
@@ -178,7 +178,7 @@ let cart_button = document.querySelector('.cart-item');
 let close = true;
 
 cart_button.addEventListener('click',function(){
-    console.log(`cart_list : ${cart_list.children.length}`);
+    //console.log(`cart_list : ${cart_list.children.length}`);
     if(cart_list.style.display=="none"|| close==true){
         cart_list.style.display="block";
         close = false;
@@ -187,7 +187,7 @@ cart_button.addEventListener('click',function(){
         cart_list.style.display="none";
     }
     if(cart_list.children.length == 1){
-        console.log(`cart_list is none`);
+        //console.log(`cart_list is none`);
         cart_delete_button.style.display =  "none";
     }
     else if(cart_list.children.length != 1){

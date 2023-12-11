@@ -3,35 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clickable Image</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        /* Optional styling for the image */
-        a img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        /* Hover effect for the image */
-        a:hover img {
-            transform: scale(1.1); /* Adjusted value for scaling on hover */
-        }
-    </style>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <h1>Your Name</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <a href="https://example.com">
-        <img src="shoppingcart.jpg" alt="Clickable Image">
-    </a>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <p>Welcome to my portfolio! Here, you can learn more about me and explore my projects.</p>
+        </section>
 
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul id="project-list">
+                <!-- Project items will be added dynamically -->
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to contact me if you have any questions or want to collaborate!</p>
+            <p>Email: example@email.com</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2022 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Add this script tag to your HTML file -->
+    <script src="index.js"></script>
 </body>
 </html>
